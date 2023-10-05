@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages1="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:danisan="clr-namespace:DanisanT" xmlns:data="clr-namespace:DanisanT.Data" x:DataType="data:Notlar2"
+                  x:Class="DanisanT.Popup.NotEkle">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.8"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            />
+    </pages:PopupPage.Animation>
+
+    <Frame CornerRadius="20" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  HeightRequest="300" WidthRequest="250" BackgroundColor="#AED5EB">
+        <StackLayout  VerticalOptions="Center"  >
+
+
+            <Image x:Name="resim" Source=" "/>
+
+            <Grid HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+
+
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="lblBilgi" Text="-Başık-" TextColor="DarkRed"  Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="20"/>
+                <Entry x:Name="NotBaslik" Placeholder="Boş Bırakılmaz" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="250"/>
+                <Label Text="Not" Grid.Row="2" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20"/>
+                <Entry x:Name="Not" Placeholder="Boş Bırakılmaz"  Grid.Row="3" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="200" WidthRequest="250" />
+                <Button x:Name="Notlaree"  Text="Ekle"
+                    Clicked="Notlaree_Clicked" 
+                    TextTransform="None"
+                     TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    Grid.Row="4" Grid.Column="0"
+                    
+                    />
+            </Grid>
+
+
+
+
+
+
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

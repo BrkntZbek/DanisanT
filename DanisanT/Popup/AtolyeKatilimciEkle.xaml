@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Popup.AtolyeKatilimciEkle">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout>
+                <SearchBar x:Name="dd" Placeholder="Arama"
+                           BackgroundColor="Bisque"
+                                   CancelButtonColor="Orange"
+                                   PlaceholderColor="#9E8565"
+                                   TextColor="#FFEDD6"
+                                   TextTransform="Lowercase"
+                                   HorizontalTextAlignment="Center"
+                                   
+                                   FontSize="Medium"
+                                   FontAttributes="Italic "
+                                   TextChanged="dd_TextChanged"
+                                   />
+            </StackLayout>
+            <Frame CornerRadius="10" BackgroundColor="Bisque">
+                
+                <Frame CornerRadius="50" Padding="15" Margin="5" BorderColor="#aed5eb" BackgroundColor="#55849E" >
+                    <StackLayout >
+                        <ListView x:Name="LstDanisan1" BackgroundColor="#55849E" ItemSelected="LstDanisan1_ItemSelected" >
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+
+                                        <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="50">
+
+                                            <Grid >
+
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width="200" />
+                                                    <ColumnDefinition/>
+
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Text="{Binding İsimSoyisim}" Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  TextColor="#55849E" FontSize="18" />
+                                                <ImageButton x:Name="ekles" Source="plus2.png" Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" Clicked="ImageButton_Clicked" />
+                                                <Image Source="{Binding Image}"  Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" />
+
+                                            </Grid>
+
+                                        </Frame>
+
+                                    </ViewCell>
+                                </DataTemplate>
+
+                            </ListView.ItemTemplate>
+
+
+                        </ListView>
+                    </StackLayout>
+                </Frame>
+            </Frame>
+            
+            
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages1="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:danisan="clr-namespace:DanisanT" xmlns:data="clr-namespace:DanisanT.Data" x:DataType="data:Atolye2"
+                  x:Class="DanisanT.Popup.AtolyePopup">
+
+
+
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            ScaleIn="1.8"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            
+             
+            />
+
+    </pages:PopupPage.Animation>
+
+    <Frame CornerRadius="20" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="440" WidthRequest="250" BackgroundColor="#AED5EB" >
+        <StackLayout VerticalOptions="Fill"  >
+            
+            <Label x:Name="DNSisim" Text="{Binding Atolye_İsim}" FontSize="Large" VerticalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"/>
+            <Label Text="Yapmak İstediğiniz İşlem" TextColor="#FFEDD6" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+            <Label Text="--------------------------------------------------" TextColor="#55849E" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+            <StackLayout/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+                <Button x:Name="Katilim"  Text="Katılımcı Ekle"    
+                    Grid.Row="0" Grid.Column="0" Clicked="Katilim_Clicked" 
+                    TextTransform="None"
+                    BorderColor="#FFEDD6" 
+                    BackgroundColor="#55849E"
+                    TextColor="#FFEDD6"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="None"
+                    
+                       
+                    
+                    />
+                <Button x:Name="Aguncelle"  Text="Güncelle" TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6" BorderWidth="1.5"  CornerRadius="20"
+                    FontAttributes="Bold" Grid.Row="1" Grid.Column="0" Clicked="Aguncelle_Clicked" TextTransform="None"/>
+                <Button x:Name="Silb"  Text="Sil" TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="2" Grid.Column="0" Clicked="Silb_Clicked" TextTransform="None"/>
+                <Button x:Name="bilgia"  Text="Bilgi" TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="3" Grid.Column="0" Clicked="bilgia_Clicked" TextTransform="None"/>
+                <Button x:Name="Odemea"  Text="Ödemeler" TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="4" Grid.Column="0"  TextTransform="None" Clicked="Odemea_Clicked"/>
+                <Button x:Name="vazcaya"  Text="Vazgeç" TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="6" Grid.Column="0"  TextTransform="None"/>
+
+            </Grid>
+
+
+        </StackLayout>
+    </Frame>
+
+
+
+</pages:PopupPage>

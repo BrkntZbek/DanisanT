@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage   xmlns="http://xamarin.com/schemas/2014/forms"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                   xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:data="clr-namespace:DanisanT.Data" x:DataType="data:Danisan"
+                  x:Class="DanisanT.Popup.BakiyeEkle">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.8"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            />
+    </pages:PopupPage.Animation>
+
+
+    <Frame CornerRadius="20" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  HeightRequest="300" WidthRequest="350" BackgroundColor="#AED5EB">
+
+        <StackLayout>
+           
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <Label  Text="Ödenen Seans Sayısı" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" TextColor="#55849E" FontSize="Medium"/>
+                <Entry x:Name="seansİnt" Placeholder="Boş Bırakılmaz"  Grid.Row="0" Grid.Column="1" Keyboard="Numeric"/>
+                <Label  Text="Seans Fiyatı" Grid.Row="1" Grid.Column="0" VerticalTextAlignment="Center" TextColor="#55849E" FontSize="Medium"/>
+                <Entry x:Name="Fiyatİnt" Placeholder="Boş Bırakılmaz"  Grid.Row="1" Grid.Column="1" Keyboard="Numeric"/>
+                <Label  Text="Alınan Ödeme" Grid.Row="2" Grid.Column="0" VerticalTextAlignment="Center" TextColor="#55849E" FontSize="Medium"/>
+                <Entry x:Name="bakiyeİnt" Placeholder="Boş Bırakılmaz"  Grid.Row="2" Grid.Column="1" Keyboard="Numeric"/>
+
+               
+
+
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    
+                </Grid.ColumnDefinitions>
+                <Button x:Name="BakiyeEkle1BTN" Text="Bakiye Ekle" HorizontalOptions="Center" Clicked="BakiyeEkle1BTN_Clicked"
+                TextTransform="None"
+                    TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    Grid.Row="0" Grid.Column="0"
+                />
+                <Button x:Name="Vazcay1BTN" Text="Vazgeç" HorizontalOptions="Center" Clicked="Vazcay1BTN_Clicked"
+                TextTransform="None"
+                    TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                    Grid.Row="0" Grid.Column="1"
+                />
+            </Grid>          
+           
+            
+        </StackLayout>
+    </Frame>
+
+
+</pages:PopupPage>

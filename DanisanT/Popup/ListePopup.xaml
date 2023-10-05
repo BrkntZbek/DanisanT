@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages1="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:danisan="clr-namespace:DanisanT" xmlns:data="clr-namespace:DanisanT.Data" x:DataType="data:Danisan"
+                  x:Class="DanisanT.ListePopup"
+                  
+                  >
+
+
+
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            ScaleIn="1.8"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            
+             
+            />
+
+    </pages:PopupPage.Animation>
+
+    <Frame CornerRadius="20"  HorizontalOptions="EndAndExpand" HeightRequest="600" WidthRequest="250" Background="arkasi2.jpg" >
+        <StackLayout  >
+            <Image x:Name="profil" Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label x:Name="DNSisim" Text="{Binding İsimSoyisim}" FontSize="Large" VerticalOptions="Center" TextColor="#55849E" HorizontalTextAlignment="Center"/>
+           
+            <Label Text="--------------------------------------------------" TextColor="#55849E" VerticalOptions="Center" HorizontalTextAlignment="Center"/>
+            <StackLayout/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+                <Button x:Name="SeansekleBTN"  Text="Seans Ekle"    
+                    Grid.Row="0" Grid.Column="0" Clicked="SeansekleBTN_Clicked" 
+                    TextTransform="None"
+                    BorderColor="#FFEDD6" 
+                    BackgroundColor="#025d8a"
+                    TextColor="#FFEDD6"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="None"
+                    
+                       
+                    
+                    />
+                <Button x:Name="guncelleBTN"  Text="Güncelle" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" BorderWidth="1.5"  CornerRadius="20"
+                    FontAttributes="Bold" Grid.Row="1" Grid.Column="0" Clicked="guncelleBTN_Clicked" TextTransform="None"/>
+                <Button x:Name="SilBTN"  Text="Sil" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="2" Grid.Column="0" Clicked="SilBTN_Clicked" TextTransform="None"/>
+                <Button x:Name="bilgiBTN"  Text="Bilgi" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="3" Grid.Column="0" Clicked="BilgiBTN_Clicked_1" TextTransform="None"/>
+                <Button x:Name="OdemeBTN"  Text="Ödemeler" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="4" Grid.Column="0"  TextTransform="None" Clicked="OdemeBTN_Clicked"/>
+                <Button x:Name="SeanslarBTN"  Text="Seanslar" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="5" Grid.Column="0"  TextTransform="None" Clicked="SeanslarBTN_Clicked"/>
+                <Button x:Name="BakiyeBTN"  Text="Toplu Ödeme" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="6" Grid.Column="0"  TextTransform="None" Clicked="BakiyeBTN_Clicked"/>
+                <Button x:Name="vazcayBTN"  Text="Vazgeç" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="7" Grid.Column="0"  TextTransform="None" Clicked="vazcayBTN_Clicked"/>
+
+            </Grid>
+
+
+        </StackLayout>
+    </Frame>
+
+
+
+</pages:PopupPage>

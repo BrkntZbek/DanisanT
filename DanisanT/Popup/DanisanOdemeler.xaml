@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage  xmlns:pages1="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:danisan="clr-namespace:DanisanT" xmlns:data="clr-namespace:DanisanT.Data" 
+                  x:Class="DanisanT.DanisanOdemeler">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.8"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            />
+
+    </pages:PopupPage.Animation>
+
+    <RefreshView
+            x:Name="RefreshView12"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding Isrefreshing}"
+            RefreshColor="#AED5EB"
+            Refreshing="RefreshView12_Refreshing"
+            >
+        
+
+        <Frame CornerRadius="20" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"  HeightRequest="450" WidthRequest="300" BackgroundColor="#AED5EB">
+            <StackLayout  VerticalOptions="Center" HorizontalOptions="Start">
+                <Label x:Name="ısm" Text=""   TextColor="#55849E" HorizontalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" FontSize="15" TextDecorations="Underline"/>
+                <Frame CornerRadius="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="150">
+                   
+
+
+                   
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                               
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="110"/>
+                                <ColumnDefinition Width="55"/>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition  Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Toplam Ödeme: " Grid.Row="0" Grid.Column="0"  TextColor="#55849E" VerticalOptions="Center" HorizontalOptions="Start"  />
+                            <Label x:Name="TodemeTXT" Text=" " Grid.Row="0" Grid.Column="1" TextColor="#9E8565" VerticalOptions="Center" HorizontalOptions="Start" />
+                            <Label Text="Borç: " Grid.Row="0" Grid.Column="2" TextColor="#55849E" VerticalOptions="Center" HorizontalOptions="Start"  HorizontalTextAlignment="Start"/>
+
+                            <Label x:Name="BorcTXT" Text=" " Grid.Row="0" Grid.Column="3" TextColor="#9E8565" VerticalOptions="Center" HorizontalOptions="Start"/>
+                        </Grid>
+
+
+
+                   
+
+
+                </Frame>
+                <StackLayout>
+                    <Frame CornerRadius="15">
+
+
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="180"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Seans Tarihi" TextColor="#9E8565" Grid.Row="0" Grid.Column="0" />
+                                <Label x:Name="xxx" Text="Fiyat" TextColor="#9E8565" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" />
+                            </Grid>
+
+                            <ScrollView>
+                                <ListView x:Name="OdList"   IsEnabled="False"  ItemSelected="OdList_ItemSelected_1"   >
+                               
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition />
+                                                   
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition />
+                                                    <ColumnDefinition Width="30" />
+                                                  
+                                                </Grid.ColumnDefinitions>
+
+
+                                                <Label x:Name="LblTArih" Text="{Binding Tarih}" TextColor="#55849E" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" />
+
+                                                <Label x:Name="OdenenLbl" Text="{Binding Odeme}" TextColor="#55849E" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                                            </Grid>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                                    
+                            </ListView>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout>
+                    <Frame CornerRadius="15">
+                        <Grid  >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition  />
+                                <ColumnDefinition  />
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="Vazgec"  Text="Vazgeç" TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="0" Grid.Column="0"  TextTransform="None" VerticalOptions="Center" HorizontalOptions="End"
+                                Clicked="Vazgec_Clicked" 
+                                />
+                            <Button x:Name="Odemeyap"  Text="Ödeme Yap" TextColor="#FFEDD6" BackgroundColor="#55849E" BorderColor="#FFEDD6" CornerRadius="20"
+                    FontAttributes="Bold" BorderWidth="1.5" Grid.Row="0" Grid.Column="1"  TextTransform="None" VerticalOptions="Start" HorizontalOptions="Start"
+                                Clicked="Odemeyap_Clicked" 
+                                />
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+            
+    </RefreshView>
+</pages:PopupPage>

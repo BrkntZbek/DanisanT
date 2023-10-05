@@ -1,0 +1,149 @@
+﻿<pages:PopupPage  xmlns:pages1="http://rotorgames.com" xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns:danisan="clr-namespace:DanisanT" xmlns:data="clr-namespace:DanisanT.Data" x:DataType="data:SeansYeri"
+                  x:Class="DanisanT.SeansYeriEkle">
+
+
+
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.8"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+           
+             
+            />
+    </pages:PopupPage.Animation>
+    <ScrollView>
+        <StackLayout VerticalOptions="Center" BackgroundColor="#1b6b90">
+
+            <Image Source="seaTuru.png" VerticalOptions="Fill"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+
+
+                </Grid.ColumnDefinitions>
+                <Label Text="Seans yeri: " TextColor="DarkOrange" FontSize="25" Grid.Row="0" Grid.Column="0"  VerticalOptions="Center" HorizontalOptions="Center"
+ />
+                <Entry Placeholder="Seansyeri" Grid.Column="1" Grid.Row="0" x:Name="Syeri" 
+                   
+                   />
+                <Label Text="Komisyon: " TextColor="DarkOrange" FontSize="25" Grid.Row="1" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Entry Placeholder="Ofis Komisyonu" Grid.Column="1" Grid.Row="1" Keyboard="Numeric" x:Name="kira"/>
+                <Button Text="Ekle" x:Name="ekle" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                        Clicked="ekle_Clicked"
+                        Grid.Row="2" Grid.Column="1"
+                     
+                />
+                <Button Text="Vazgeç" x:Name="vazgeçX" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                    
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                        Clicked="vazgeçX_Clicked"
+                        Grid.Row="2" Grid.Column="0"
+                    HorizontalOptions="Center"
+                />
+                <Button Text="Sil" x:Name="Sil" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                   
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                        Clicked="Sil_Clicked"
+                        Grid.Row="2" Grid.Column="2"
+                    HorizontalOptions="Center"
+                    IsEnabled="False"
+                />
+
+
+            </Grid>
+
+            <StackLayout AbsoluteLayout.LayoutBounds="10,20,10,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Seans Yeri" Grid.Row="0" Grid.Column="0" TextColor="DarkOrange" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                        WidthRequest="190"
+                    HeightRequest="100"
+                       />
+                    <Label Text="Komisyon" Grid.Row="0" Grid.Column="1" TextColor="DarkOrange" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                        WidthRequest="190"
+                    HeightRequest="100"
+                       />
+                </Grid>
+
+            </StackLayout>
+
+            <StackLayout>
+                <ListView x:Name="LstSea_Yeri" ItemSelected="LstSea_Yeri_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding SeansYer} " Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="PapayaWhip"/>
+                                    <Label Text="{Binding  Kira}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="PapayaWhip" />
+
+
+
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+
+        </StackLayout>
+
+
+    </ScrollView>
+
+</pages:PopupPage>

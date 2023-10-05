@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Views.DanisanEkle"
+             BackgroundImageSource="arkasi.jpg"
+             >
+    <ContentPage.Content>
+        <StackLayout >
+
+            <StackLayout>
+
+                
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="----------------------------------------------------------------------------------------------------" TextColor="White" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+            <Entry x:Name="Disim" Placeholder="İsim Soyisim"  FontSize="Body" HorizontalTextAlignment="Center" Margin="10,5,10,0" Keyboard="Text"  PlaceholderColor="#55849E"/>
+
+            <Entry x:Name="Dtel" Placeholder="Telefon"  FontSize="Body" HorizontalTextAlignment="Center" PlaceholderColor="#55849E" Margin="10,5,10,0" Keyboard="Telephone"  />
+
+            <Entry x:Name="Dara1" Placeholder="Aranacak 1"  FontSize="Body" HorizontalTextAlignment="Center" PlaceholderColor="#55849E" Margin="10,5,10,0" Keyboard="Telephone" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+               
+                <Image Source="Man.png" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <Image Source="Wman.png"  Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"/>
+                <RadioButton x:Name="erkek" HorizontalOptions="End" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"   />
+                <RadioButton x:Name="Kadin" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" VerticalOptions="Center"/>
+            </Grid>
+
+            <Entry x:Name="DBilgi" Placeholder="Bilgi"   FontSize="Body" HorizontalTextAlignment="Center" PlaceholderColor="#A58B8B" Margin="10,10,10,50" Keyboard="Text" HorizontalOptions="Fill" HeightRequest="100"  />
+            
+            <Button x:Name="Dekle_btn" TextTransform="None" Text="EKLE" TextColor="#55849E" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="60"  WidthRequest="170"  BackgroundColor="White" BorderColor="#9E8565" BorderWidth="2" CornerRadius="20"  FontAttributes="Bold" Clicked="Dekle_btn_Clicked" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

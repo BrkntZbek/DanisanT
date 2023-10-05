@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="DanisanT.Views.DanisanListesi"
+               BackgroundImageSource="arkasi.jpg"
+             >
+
+
+
+    <ContentPage.Content>
+        <RefreshView
+            x:Name="RefreshView"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding Isrefreshing}"
+            RefreshColor="#30346f"
+            Refreshing="RefreshView_Refreshing"
+            
+            >
+            <ScrollView>
+
+
+
+
+                <StackLayout >
+                    
+
+                    <StackLayout>
+
+                        <StackLayout>
+
+                           
+                        </StackLayout>
+
+                        <StackLayout>
+                            <SearchBar Placeholder="Arama"
+                                   CancelButtonColor="Orange"
+                                   PlaceholderColor="White"
+                                   TextColor="White"
+                                   TextTransform="Lowercase"
+                                   HorizontalTextAlignment="Center"
+                                   
+                                   FontSize="Medium"
+                                   FontAttributes="Italic "
+                                   TextChanged="SearchBar_TextChanged"
+                                       BackgroundColor="#025d8a"
+                                       Opacity="0.5"
+                                   />
+                           
+                        </StackLayout>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="------------------------------------------------------------------------------------------------------" TextColor="White" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                    <Frame CornerRadius="40" Padding="15" Margin="5" BorderColor="White" BackgroundColor="#025d8a" Opacity="0.9" >
+                        <StackLayout >
+                            <ListView x:Name="LstDanisan" BackgroundColor="#025d8a" ItemSelected="LstDanisan_ItemSelected" >
+                        
+                        <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                        
+                                    <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="40">
+                                        
+                                    <Grid >
+                                                   
+                                                    <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="200" />
+                                            <ColumnDefinition/>
+
+                                        </Grid.ColumnDefinitions>
+
+                                         <Label Text="{Binding İsimSoyisim}" Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"  TextColor="Black" FontSize="15" />
+                                         <Label Text="{Binding Telefon}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="#55849E" />
+                                        <Image Source="{Binding Image}"  Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" />
+                                        
+                                        </Grid>
+                                        
+                                    </Frame>
+                                    
+                                </ViewCell>
+                            </DataTemplate>
+                            
+                        </ListView.ItemTemplate>
+
+
+                    </ListView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+
+</ContentPage>

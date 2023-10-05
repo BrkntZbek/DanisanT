@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Views.AtolyeMenu">
+    
+    <ContentPage.Content>
+        <RefreshView
+            x:Name="RefreshViewe"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding Isrefreshing}"
+            RefreshColor="#30346f"
+            Refreshing="RefreshViewe_Refreshing"
+            
+            >
+            <ScrollView >
+        <StackLayout BackgroundColor="#aed5eb">
+                   
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                     <RowDefinition />
+                        
+                    </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="AtolyeEkle"  Text="Atolye Ekle" HorizontalOptions="Center" Clicked="AtolyeEkle_Clicked"
+                TextTransform="None"
+                    TextColor="Black" 
+                    BorderWidth="0.3"
+                    CornerRadius="15"
+                    FontAttributes="Bold"
+                        Grid.Row="1" Grid.Column="0"
+                        ImageSource="plus.png"
+                        BackgroundColor="#aed5eb"
+                        FontSize="Default"
+                />
+
+                <Image  Grid.Row="0" Grid.Column="1" Grid.RowSpan="2"  Source="meeting.png" VerticalOptions="Start"/>
+
+                    <SearchBar Placeholder="Arama"
+                                   CancelButtonColor="Orange"
+                                   PlaceholderColor="Black"
+                                   TextColor="White"
+                                   TextTransform="Lowercase"
+                                   HorizontalTextAlignment="Start"
+                                    TextChanged="SearchBar_TextChanged"
+                                   FontSize="Medium"
+                                   FontAttributes="Italic "
+                                   HorizontalOptions="Start"
+                               Grid.Row="1" Grid.Column="2"
+                                   />
+
+                </Grid>
+          
+            
+            <Frame CornerRadius="50" Padding="15" Margin="5" BorderColor="#aed5eb" BackgroundColor="#55849E" >
+                
+                <StackLayout >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                                 
+                                </Grid.ColumnDefinitions>
+                        <Label Text="Atölye" TextColor="AntiqueWhite" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" />
+                        <Label Text="Tarih" TextColor="AntiqueWhite" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                        <Label Text="Saat" TextColor="AntiqueWhite" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                            
+                            </Grid>
+                    <Label Text="------------------------------------------------------------------------------------------"/>
+                    <ListView x:Name="LstAtolye" BackgroundColor="#55849E" ItemSelected="LstAtolye_ItemSelected" >
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="50">
+
+                                        <Grid >
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                
+                                                    </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="130"/>
+                                                <ColumnDefinition Width="70" />
+                                                <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+
+                                            <Label Text= "{Binding Atolye_İsim}" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"   TextColor="DarkRed" FontSize="16"/>
+                                            <Label Text="{Binding Atolye_Tarih}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="#55849E"/>
+                                             <Label Text="{Binding Atolye_Saat}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  TextColor="#55849E" />
+                                               
+
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                         
+
+                    </ListView>
+                           
+                        </StackLayout>
+            </Frame>
+
+
+
+
+
+        </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

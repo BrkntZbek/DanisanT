@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Views.SeansListesi"
+             
+             BackgroundImageSource="arkasi.jpg"
+             >
+    <ContentPage.Content>
+        <RefreshView
+            x:Name="RefreshView1"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding Isrefreshing}"
+            RefreshColor="#AED5EB"
+            Refreshing="RefreshView1_Refreshing"
+            
+            >
+            <ScrollView>
+
+
+
+                <StackLayout>
+
+                    <StackLayout>
+
+                        <StackLayout>
+
+                        </StackLayout>
+                        <Frame CornerRadius="30" BackgroundColor="#025d8a"  Margin="10,0,10,0"   BorderColor="White" Opacity="0.8">
+                            <StackLayout VerticalOptions="Start" HorizontalOptions="Start" Margin="-15,-5,120,-15" >
+                                <SearchBar Placeholder="Arama"
+                                   CancelButtonColor="DarkRed"
+                                   PlaceholderColor="Wheat"
+                                   TextColor="White"
+                                   TextTransform="Lowercase"
+                                   HorizontalTextAlignment="Center"
+                                  
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Medium"
+                                   FontAttributes="Italic "
+                                   TextChanged="SearchBar_TextChanged"
+                                    Margin="-15,-20,-70,-10"
+                                   />
+
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="120"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text=" Tarihe Göre Ara :" TextColor="White" Grid.Row="0" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="15"/>
+                                    <DatePicker HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" TextColor="Wheat" x:Name="DataPicker" SizeChanged="DataPicker_SizeChanged"  DateSelected="DataPicker_DateSelected"  />
+                                </Grid>
+                            </StackLayout>
+
+                        </Frame>
+                        <StackLayout>
+                            <Label Text="------------------------------------------------------------------------------------------------------" TextColor="White" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                        
+                    </StackLayout>
+
+
+
+
+                    <Frame CornerRadius="40" Padding="15" Margin="5" BorderColor="White" BackgroundColor="#025d8a" Opacity="0.9" >
+                        <Grid Opacity="1">
+
+
+                            <StackLayout BackgroundColor="#025d8a" Opacity="1" >
+
+
+                                <ListView x:Name="LstSeans" BackgroundColor="#025d8a" ItemSelected="LstSeans_ItemSelected"   >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="40" >
+                                                <Grid Opacity="1">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition Width="90"/>
+                                                        <ColumnDefinition/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label Text= "{Binding Seans_İsimSoyisim}" Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Padding="-70,0,0,0" TextColor="Black" FontSize="15"/>
+                                                    <Label Text="{Binding Tarih}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="#55849E"/>
+                                                    <Label Text="{Binding SeansId}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="20,0,80,0" TextColor="#55849E"/>
+                                                    <Label  Text="{Binding Saat}" Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="#55849E"  />
+                                                    
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+
+                                </ListView.ItemTemplate>
+
+
+                            </ListView>
+                        </StackLayout>
+                        </Grid>
+                    </Frame>
+                    
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

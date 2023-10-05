@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Odemeler">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#1b6b90" >
+            
+
+            <StackLayout>
+                <SearchBar x:Name="sse" Placeholder="Arama"
+                                   CancelButtonColor="Orange"
+                                   PlaceholderColor="Orange"
+                                   TextColor="Orange"
+                                   TextTransform="Default"
+                                    BackgroundColor="SlateGray"
+                                       Opacity="20"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   FontSize="Medium"
+                                   FontAttributes="Italic "
+                                   TextChanged="sse_TextChanged" 
+                                    
+                                   />
+
+                <Grid x:Name="ss"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Text="Ödeyen Kişi" TextColor="DarkOrange" Grid.Row="0"  Grid.Column="0" HorizontalOptions="Center" FontSize="17"/>
+                    <Label  Text="Ödenen" TextColor="DarkOrange" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" FontSize="17"/>
+                    <Label  Text="Ödeme Tarihi" TextColor="DarkOrange" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" FontSize="17"/>
+                </Grid>
+
+                <StackLayout>
+                    <ListView x:Name="LstOdeme" ItemSelected="LstOdeme_ItemSelected" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding Odeyen_Danisan}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="AntiqueWhite"/>
+                                        <Label Text="{Binding Odenen}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="AntiqueWhite"/>
+                                        <Label Text="{Binding OdemeTarihi}" Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="AntiqueWhite"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

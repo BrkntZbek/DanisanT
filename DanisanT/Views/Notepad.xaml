@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Views.Notepad">
+
+    <ContentPage.Content>
+        <RefreshView
+            x:Name="RefreshViewe2"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding Isrefreshing}"
+            RefreshColor="#30346f"
+            Refreshing="RefreshViewe2_Refreshing"
+            
+            >
+            <ScrollView >
+                <StackLayout BackgroundColor="White">
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200" />
+
+                            <ColumnDefinition Width="200" />
+                        </Grid.ColumnDefinitions>
+                        <SearchBar Placeholder="Arama"
+                                   CancelButtonColor="Orange"
+                                   PlaceholderColor="Black"
+                                   TextColor="White"
+                                   TextTransform="Lowercase"
+                                   HorizontalTextAlignment="Center"
+                                    TextChanged="SearchBar_TextChanged"
+                                   FontSize="Medium"
+                                   FontAttributes="Italic "
+                                   HorizontalOptions="Center"
+                               Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                   />
+
+
+
+
+                        <Button x:Name="notEkle"  Text="Seans Notu Ekle" HorizontalOptions="Center" Clicked="notEkle_Clicked"
+                TextTransform="None"
+                    TextColor="Black" 
+                    BorderWidth="1"
+                                BorderColor="#55849E"
+                    CornerRadius="15"
+                    FontAttributes="Bold"
+                        Grid.Row="1" Grid.Column="0"
+                        ImageSource="plus.png"
+                        BackgroundColor="#aed5eb"
+                        FontSize="Default"
+                />
+                        <Button x:Name="notEkle2"  Text="Danışan Notu Ekle" HorizontalOptions="End" Clicked="notEkle_Clicked"
+                TextTransform="None"
+                    TextColor="Black" 
+                    BorderWidth="1"
+                                BorderColor="#55849E"
+                    CornerRadius="15"
+                    FontAttributes="Bold"
+                        Grid.Row="1" Grid.Column="1"
+                        ImageSource="plus.png"
+                        BackgroundColor="#aed5eb"
+                        FontSize="Default"
+                />
+
+
+
+
+
+                      
+
+                    </Grid>
+
+
+                    <Frame CornerRadius="50" Padding="15" Margin="5" BorderColor="#aed5eb" BackgroundColor="#55849E" >
+
+                        <StackLayout >
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    
+
+                                </Grid.ColumnDefinitions>
+                                <Label Text="NOTLAR" TextColor="AntiqueWhite" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" />
+                               
+
+                            </Grid>
+                            <Label Text="------------------------------------------------------------------------------------------"/>
+                            <ListView x:Name="Lstnote" BackgroundColor="#55849E" ItemSelected="Lstnote_ItemSelected" >
+
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+
+                                            <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="50">
+
+                                                <Grid >
+
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="130"/>
+                                                        <ColumnDefinition Width="70" />
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <Label Text= "{Binding Atolye_İsim}" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"   TextColor="DarkRed" FontSize="16"/>
+                                                    <Label Text="{Binding Atolye_Tarih}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="#55849E"/>
+                                                    <Label Text="{Binding Atolye_Saat}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"  TextColor="#55849E" />
+
+
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+
+
+                            </ListView>
+
+                        </StackLayout>
+                    </Frame>
+
+
+
+
+
+                </StackLayout>
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "wWmMKcTO0KC4t2lGY8dBMKuHzWRX5mKpLWlr0cUIen25UbLeP7FO6XqFwEMEB7cjx+e9P9aLK6ToVoch1AKa6Q==",
+  "success": true,
+  "projectFilePath": "D:\\DanisanT\\DanisanT\\DanisanT.iOS\\DanisanT.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brknt\\.nuget\\packages\\fody\\6.6.4\\fody.6.6.4.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\mongodb.bson\\2.11.3\\mongodb.bson.2.11.3.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\realm\\10.20.0\\realm.10.20.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\realm.fody\\10.20.0\\realm.fody.10.20.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\realm.sourcegenerator\\10.20.0\\realm.sourcegenerator.10.20.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\remotion.linq\\2.2.0\\remotion.linq.2.2.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\rg.plugins.popup\\2.1.0\\rg.plugins.popup.2.1.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\xamarin.essentials\\1.7.5\\xamarin.essentials.1.7.5.nupkg.sha512",
+    "C:\\Users\\brknt\\.nuget\\packages\\xamarin.forms\\5.0.0.2578\\xamarin.forms.5.0.0.2578.nupkg.sha512"
+  ],
+  "logs": []
+}

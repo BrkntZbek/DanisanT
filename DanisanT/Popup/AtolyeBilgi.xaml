@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Popup.AtolyeBilgi">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame CornerRadius="20" BackgroundColor="#aed5eb">
+                <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="atolyeİsmi" Text=" " Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" TextColor="Black" HorizontalOptions="End" FontSize="Large" HorizontalTextAlignment="Center"/>
+                    <Label Text="Fiyat:" Grid.Row="1" Grid.Column="0" TextColor="#55849E" FontSize="18"/>
+                    <Label x:Name="Fiyat" Grid.Row="1" Grid.Column="1" TextColor="#55849E"/>
+                        <Label Text="Tarih:" Grid.Row="2" Grid.Column="0" TextColor="#55849E" FontSize="18"/>
+                    <Label x:Name="Tarihx" Grid.Row="2" Grid.Column="1" TextColor="#55849E"/>
+                        <Label Text="Saat:" Grid.Row="3" Grid.Column="0" TextColor="#55849E" FontSize="18"/>
+                    <Label x:Name="SaatX" Text=" " Grid.Row="3" Grid.Column="1" TextColor="#55849E"/>
+                        <Label Text="Katılım Sayısı: " Grid.Row="4" Grid.Column="0" TextColor="#55849E" FontSize="18"/>
+                    <Label x:Name="Katilimx" Text=" " Grid.Row="4" Grid.Column="1" TextColor="#55849E"/>
+                        <Label Text="Gelir" Grid.Row="5" Grid.Column="0" TextColor="#55849E" FontSize="18"/>
+                    <Label x:Name="Gelix" Text="" Grid.Row="5" Grid.Column="1" TextColor="#55849E"/>
+                </Grid>
+                    <Label Text="--KATILIMCILAR--" HorizontalOptions="Center" TextColor="Gray"  />
+                </StackLayout>
+            </Frame>
+
+            <Frame CornerRadius="20" Padding="15" Margin="5" BorderColor="#aed5eb" BackgroundColor="#55849E" >
+
+                <StackLayout >
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                         
+                        </Grid.ColumnDefinitions>
+                        <Label Text="İsim Soyisim" TextColor="AntiqueWhite" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" />
+                        <Label Text="Telefon" TextColor="AntiqueWhite" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"/>
+                        
+
+                    </Grid>
+                   
+                    <Label Text="------------------------------------------------------------------------------------------"/>
+                    
+                    <ScrollView>
+                    <ListView x:Name="LstAtolyeKatilim" BackgroundColor="#55849E" ItemSelected="LstAtolyeKatilim_ItemSelected"  >
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="50">
+
+                                        <Grid >
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="150"/>
+                                                <ColumnDefinition Width="150" />
+                                                
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text= "{Binding Katilimci_İsim}" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"   TextColor="DarkRed" FontSize="16"/>
+                                            <Label Text="{Binding Katilimci_Telefon}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" VerticalTextAlignment="Center" TextColor="#55849E"/>
+                                            
+
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+                    </ListView>
+                        </ScrollView>
+                </StackLayout>
+            </Frame>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

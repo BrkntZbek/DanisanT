@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DanisanT.Views.AnaSayfa"
+             BackgroundImageSource="arkasi.jpg"
+             >
+            
+    <ContentPage.Content>
+        <RefreshView
+            x:Name="RefreshView1"
+            Command="{Binding RefreshCommand}"
+            IsRefreshing="{Binding Isrefreshing}"
+            RefreshColor="#AED5EB"
+            Refreshing="RefreshView1_Refreshing"
+            >
+            <ScrollView>
+
+
+
+
+                <StackLayout  VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+                    <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5"/>
+                            <RowDefinition/>
+                             </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                        <Button x:Name="KullaniciPaneli" ImageSource="settings32.png" HorizontalOptions="Center" VerticalOptions="Center" 
+                           
+                    TextTransform="None"
+                    Opacity="0.6"
+                    BackgroundColor=" #AED6F1"
+                    TextColor="#55849E"
+                    BorderWidth="2"
+                                BorderColor="#3192c8"
+                    CornerRadius="50"
+                    FontAttributes="Bold"
+                            Clicked="KullaniciPaneli_Clicked" 
+                            Grid.Row="1" Grid.Column="0"
+                                
+                        />
+
+                        <Button x:Name="Muhasebe" ImageSource="lira32.png" Text=""  HorizontalOptions="Center" VerticalOptions="Center" 
+                           
+                    TextTransform="None"
+                    Opacity="0.6"
+                    BackgroundColor=" #AED6F1"
+                    TextColor="#55849E"
+                    BorderWidth="2"
+                                 BorderColor="#3192c8"
+                    CornerRadius="40"
+                    FontAttributes="Bold"
+                            Clicked="Muhasebe_Clicked" 
+                            Grid.Row="1" Grid.Column="1"
+                        />
+                            <Button x:Name="Notebook" ImageSource="edit32.png" Text=""  HorizontalOptions="Center" VerticalOptions="Center" 
+                           
+                    TextTransform="None"
+                     Opacity="0.6"
+                    BackgroundColor=" #AED6F1"
+                    TextColor="#55849E"
+                    BorderWidth="2"
+                                     BorderColor="#3192c8"
+                    CornerRadius="40"
+                    FontAttributes="Bold"
+                            Clicked="Notebook_Clicked" 
+                            Grid.Row="1" Grid.Column="2"
+                        />
+
+                            <Button x:Name="atolye" ImageSource="video.png" Text=""  HorizontalOptions="Center" VerticalOptions="Center" 
+                           
+                    TextTransform="None"
+                    Opacity="0.6"
+                    BackgroundColor=" #AED6F1"
+                    TextColor="#55849E"
+                    BorderWidth="2"
+                                     BorderColor="#3192c8"
+                    CornerRadius="40"
+                    FontAttributes="Bold"
+                            Clicked="atolye_Clicked" 
+                            Grid.Row="1" Grid.Column="3"
+                        />
+                        </Grid>
+
+                    <Label Text="-------------------------------------------------------" TextColor="#AED6F1" FontSize="Large"/>
+
+                    <Label Text="Bugünkü Seanslar" FontSize="Large" TextColor="#AED6F1" HorizontalOptions="Center"/>
+                    <Frame CornerRadius="40" Padding="15" Margin="5" BorderColor="White" BackgroundColor="#025d8a" Opacity="0.9" >
+                        
+                        <StackLayout>
+                            
+                            <Grid>
+                                
+                                <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+
+
+                                <ListView x:Name="YaklasanSeansLST" BackgroundColor="#025d8a" ItemSelected="YaklasanSeansLST_ItemSelected" Grid.Row="0" Grid.Column="0" Scrolled="YaklasanSeansLST_Scrolled" >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                                <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="40">
+                                        <Grid >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition/>
+                                                           
+                                                        </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Text= "{Binding Seans_İsimSoyisim}" Grid.Row="0" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Padding="-70,0,0,0" TextColor="Black" FontSize="15"/>
+                                                    
+                                                    <Label Text="{Binding SeansId}" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Padding="20,0,80,0" TextColor="#55849E"/>
+                                                    <Label  Text="{Binding Saat}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="#55849E" />
+                                                        <Label Text="{Binding SeansTuru}" Grid.Row="0" Grid.Column="3" HorizontalTextAlignment="End" HorizontalOptions="End" VerticalTextAlignment="Center" TextColor="#55849E"/>
+                                                       
+                                                    </Grid>
+                                                </Frame>
+                                            </ViewCell>
+                                    </DataTemplate>
+
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                        
+
+                    </StackLayout>
+
+                    </Frame>
+
+                </StackLayout>
+
+            </ScrollView>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

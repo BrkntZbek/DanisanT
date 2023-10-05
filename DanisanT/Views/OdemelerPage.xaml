@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="DanisanT.OdemelerPage">
+    <ContentPage.Content >
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Image Source="arkasi.jpg" Aspect="Fill" HeightRequest="180" VerticalOptions="Center"/>
+            <StackLayout Orientation="Vertical" Margin="0,20" HorizontalOptions="Center" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <Image Source="lira.png" WidthRequest="50" HeightRequest="50" VerticalOptions="Center"/>
+                    <Label x:Name="geneltoplam" Text="" TextColor="White" FontSize="50" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                    
+                    
+                </StackLayout>
+                <Label Text="-Toplam Gelir-" TextColor="White" FontSize="12" HorizontalOptions="Center"  />
+            </StackLayout>
+           
+            <Frame Grid.Row="1" HasShadow="True" CornerRadius="10" Margin="20,-40,20,0" Padding="0" HeightRequest="120" VerticalOptions="Start">
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="seans.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label x:Name="xToplamSeans" Text="" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="Seans Sayısı" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="trLiras.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label x:Name="xToplamGelir" Text="2.6 m/s" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label x:Name="SeansGElir" Text="Seans Geliri" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="ofisgider.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label x:Name="xToplamOkirasi" Text="" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="Ofis Gideri" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="3" Orientation="Vertical" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Image Source="close.png" HeightRequest="25" HorizontalOptions="Center"/>
+                        <StackLayout Spacing="7" HorizontalOptions="CenterAndExpand">
+                            <Label x:Name="İptalSeansx" Text="24%" TextColor="Black" FontSize="14" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Text="İptal Seans" TextColor="#7D7D7D" FontSize="11" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                
+
+            </Frame>
+            
+            
+            <StackLayout Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Ödeyen" HorizontalTextAlignment="Center" Padding="0,0,15,-5"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Ödenen" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="Tarih" HorizontalTextAlignment="Center"  Padding="0,0,15,-5"/>
+                </Grid>
+              
+                <Frame HasShadow="True" CornerRadius="10" BackgroundColor="#025d8a" Opacity="0.5"  HeightRequest="200" >
+                    <ListView x:Name="odemeLİST" BackgroundColor="#025d8a" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame BorderColor="DarkBlue"    Padding="5,0,-30,0" CornerRadius="10">
+                                        <Grid >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                               
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition  Width="145"/>
+                                                <ColumnDefinition Width="130"/>
+                                                <ColumnDefinition Width="120"/>
+                                              
+                                            </Grid.ColumnDefinitions>
+                                            <Label x:Name="Dansn" Text= "{Binding Odeyen_Danisan}" Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Padding="5,0,0,0" TextColor="Black" FontSize="13"/>
+
+                                            <Label Text="{Binding Odenen}" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="20,0,80,0" TextColor="#55849E"/>
+                                            <Label  Text="{Binding OdemeTarihi}" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" TextColor="#55849E" />
+                                            
+
+                                        </Grid>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+                <Button  x:Name="genelBTN"  Text="Genel Muhasebe" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" BorderWidth="2"  CornerRadius="10"
+                    FontAttributes="Bold"  TextTransform="None" Clicked="genelBTN_Clicked"/>
+                <Button x:Name="AylikBTN"   Text="Aylık Muhasebe" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" BorderWidth="2"  CornerRadius="10"
+                    FontAttributes="Bold"  TextTransform="None" Clicked="AylikBTN_Clicked"/>
+                <Button  x:Name="odenmeyenbtn" Text="Ödenmeyen Seanslar" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" BorderWidth="2"  CornerRadius="10"
+                    FontAttributes="Bold"  TextTransform="None" Clicked="odenmeyenbtn_Clicked"/>
+                <Button Text="İptal Seanslar" TextColor="#FFEDD6" BackgroundColor="#025d8a" BorderColor="#FFEDD6" BorderWidth="2"  CornerRadius="10"
+                    FontAttributes="Bold"  TextTransform="None" Clicked="Button_Clicked_2"/>
+            </StackLayout>
+           
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

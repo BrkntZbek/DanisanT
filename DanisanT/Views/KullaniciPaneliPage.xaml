@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:data="clr-namespace:DanisanT.Data"
+             x:Class="DanisanT.KullaniciPaneliPage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#1b6b90">
+            <StackLayout BackgroundColor="#1b6b90" VerticalOptions="Center" HorizontalOptions="Center">
+                <Image Source="kPaneli.png"/>
+
+            </StackLayout>
+
+
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition />
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+
+
+
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Seans Yeri Ekle" x:Name="Ayarlarbtn" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="None"
+                            Padding="0,10,0,10"
+                        Clicked="Ayarlarbtn_Clicked"
+                        Grid.Row="0" Grid.Column="0"
+                />
+                    <Button Text="Atolye" x:Name="Atolyebtn" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                        Clicked="Atolyebtn_Clicked"
+                        Grid.Row="1" Grid.Column="0"
+                />
+                    <Button Text="Muhasebe" x:Name="Muhasebebtn" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                        Clicked="Muhasebebtn_Clicked"
+                        Grid.Row="2" Grid.Column="0"
+                />
+                    <Button Text="Ödemeler" x:Name="Odemelerx" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                        Clicked="Odemelerx_Clicked"
+                        Grid.Row="3" Grid.Column="0"
+                            
+                />
+                    <Button Text="Kullanıcı Bilgileri" x:Name="K_Bilgileri" 
+                TextTransform="None"
+                    BorderColor="DarkOrange" 
+                    BackgroundColor="#30346f"
+                    TextColor="WhiteSmoke"
+                    BorderWidth="1.5"
+                    CornerRadius="20"
+                    FontAttributes="Bold"
+                        Clicked="K_Bilgileri_Clicked"
+                        Grid.Row="4" Grid.Column="0"/>
+
+
+
+                    <Label TextColor="DarkOrange" Text="Seans Alarmlarını Aç" Grid.Row="0" Grid.Column="1" VerticalTextAlignment="Start" BackgroundColor="#3b81a1"/>
+                    <Switch Grid.Row="0" Grid.Column="1" VerticalOptions="End" HorizontalOptions="Center"  BackgroundColor="#3b81a1"/>
+
+                </Grid>
+
+            </StackLayout>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
